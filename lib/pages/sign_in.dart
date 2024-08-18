@@ -136,8 +136,7 @@ class _SignInState extends State<SignIn> {
                 ),
                 onPressed: () {
                   if(loginController.text.length>=4 && passwordController.text.length>=6){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
-                  }
+Navigator.pushAndRemoveUntil(context, RawDialogRoute(pageBuilder: (context, animation, secondaryAnimation) => HomePage(),), (route) => false,);                  }
                   else{
                     showModalBottomSheet(context: context, builder: (context) => Container(height: 100,
                         width: double.infinity,
